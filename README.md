@@ -13,23 +13,52 @@
 Для компиляции LaTeX файлов необходимо:
 - TeX Live, MiKTeX или другой дистрибутив LaTeX
 - Пакеты: beamer, babel, amsmath, tikz и др. (включены в большинство дистрибутивов)
+- **XeLaTeX** для корректной работы с русским языком
+
+## Компиляция / Compilation
+
+### Русская версия
+
+Шаблон на русском языке рекомендуется компилировать с помощью XeLaTeX для корректного отображения кириллических символов:
+
+```
+xelatex sirius_template.tex
+```
+
+### Английская версия
+
+Английская версия может быть скомпилирована как с помощью pdfLaTeX, так и XeLaTeX:
+
+```
+pdflatex sirius_template_eng.tex
+```
+
+или
+
+```
+xelatex sirius_template_eng.tex
+```
 
 ## Использование / Usage
 
 ### На русском
 
+Для работы локально:
 1. Скопируйте `sirius_template.tex` и директорию `images/`
 2. Отредактируйте метаданные презентации (заголовок, автор, институт)
 3. Добавьте свое содержимое, используя примеры оформления различных слайдов
-4. Скомпилируйте файл используя pdfLaTeX
+4. Скомпилируйте файл используя XeLaTeX
 
+Либо исспользуйте Overleaf
 ### In English
 
+To work locally:
 1. Copy `sirius_template_eng.tex` and the `images/` directory
 2. Edit the presentation metadata (title, author, institute)
 3. Add your content using the provided slide examples
-4. Compile the file using pdfLaTeX
+4. Compile the file using pdfLaTeX or XeLaTeX
 
+Or use Overleaf
 ## Структура шаблона / Template Structure
 
 Шаблон включает примеры различных типов слайдов:
@@ -66,4 +95,4 @@
 
 ## Поддержка / Support
 
-При возникновении вопросов по использованию шаблона, обратитесь к [документации Beamer](https://ctan.org/pkg/beamer). 
+При возникновении вопросов по использованию шаблона, обратитесь к документации [Beamer](https://ctan.org/pkg/beamer), [XeLaTeX](https://www.overleaf.com/learn/latex/XeLaTeX) или [Polyglossia](https://ctan.org/pkg/polyglossia) для многоязычной поддержки. 
