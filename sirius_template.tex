@@ -1,0 +1,220 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Шаблон презентации НТУ "Сириус"
+% Автор: на основе шаблона от НТУ "Сириус"
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------
+% Настройка документа и базовых пакетов
+%----------------------------------------------------------
+\documentclass[10pt]{beamer}  % Класс для создания презентаций, размер шрифта 10pt
+
+% Настройка для XeLaTeX и поддержки русского языка
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setdefaultlanguage{russian}
+\setotherlanguage{english}
+
+% Настройка шрифтов
+\defaultfontfeatures{Ligatures=TeX}
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+\setmonofont{Courier New}
+
+% Дополнительные пакеты
+\usepackage{animate}          % Поддержка анимации
+\usepackage{xcolor}           % Работа с цветом
+\usepackage[absolute,overlay]{textpos}  % Позиционирование текста
+\usepackage{amsmath}          % Математические формулы
+\usepackage{fontawesome}      % Иконки
+\usepackage{tikz}             % Рисование векторной графики
+
+% Настройка библиографии
+\setbeamertemplate{bibliography item}{\insertbiblabel}
+
+%----------------------------------------------------------
+% Настройка темы и цветов презентации
+%----------------------------------------------------------
+\usetheme{default}            % Базовая тема Beamer
+
+% Определение фирменного цвета Сириуса
+\definecolor{Sirius}{rgb}{0.004, 0.616, 0.631} 
+
+% Установка цвета структурных элементов в фирменный цвет
+\usecolortheme[named=Sirius]{structure}
+
+% Добавление номера слайда в нижний колонтитул
+\setbeamertemplate{footline}[frame number]
+
+%----------------------------------------------------------
+% Настройка метаданных презентации
+%----------------------------------------------------------
+\hypersetup{unicode=true}     % Для корректной работы с Unicode в метаданных
+
+\title[Краткий заголовок]{\bf 
+Название презентации}  % Заголовок презентации
+
+\date[]{}  % Дата (пустая по умолчанию)
+
+\author[Автор] {\bf 
+ФИО автора \\ 
+Должность/звание \\ 
+Дополнительная информация}
+
+\institute[] {
+НТУ <<Сириус>> \\ 
+Название направления \\ 
+Название лаборатории
+}
+
+%----------------------------------------------------------
+% Настройка логотипа
+%----------------------------------------------------------
+\logo{
+\includegraphics[width=1.5cm]{images/Sirius-logo.png}
+}
+
+%----------------------------------------------------------
+% Определение математических команд
+%----------------------------------------------------------
+\newcommand{\bF}{\mathbb{F}}
+\newcommand{\bC}{\mathbb{C}}
+\newcommand{\bP}{\mathbb{P}}
+\newcommand{\bN}{\mathbb{N}}
+\newcommand{\bs}{\mathbb{S}}
+
+%----------------------------------------------------------
+% Начало документа
+%----------------------------------------------------------
+\begin{document}
+
+%----------------------------------------------------------
+% Титульный слайд
+%----------------------------------------------------------
+\maketitle
+
+%----------------------------------------------------------
+% Пример слайда с двумя изображениями
+%----------------------------------------------------------
+\begin{frame}{Название слайда}
+
+\begin{figure}
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/Sirius-logo.png}
+        \caption{Подпись к первому изображению}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/Sirius-logo.png}
+        \caption{Подпись ко второму изображению}
+    \end{minipage}
+\end{figure}
+
+\end{frame}
+
+%----------------------------------------------------------
+% Пример слайда с формулами
+%----------------------------------------------------------
+\begin{frame}{Пример математических формул}
+    \begin{equation}
+        \label{eq:example}
+        \begin{cases}
+             \text{div}_x \bP + \boldsymbol{f} = \rho \frac{\partial^2 \boldsymbol{u}}{\partial t^2}  & \text{в области } \mathcal{B}, \\
+            \bP \cdot \boldsymbol{n} = \boldsymbol{g} & \text{на границе } \partial \mathcal{B}_g, \\
+            \boldsymbol{u} = \boldsymbol{u}_0 & \text{на границе } \partial \mathcal{B}_u.
+        \end{cases}
+    \end{equation}
+    
+    \begin{itemize}
+        \item $\displaystyle \bP = \frac{\boldsymbol{f}_{int}}{\Delta A}$ -- тензор напряжений
+        \item Формула с ссылкой на уравнение \eqref{eq:example}
+    \end{itemize}
+\end{frame}
+
+%----------------------------------------------------------
+% Пример слайда с маркированным списком
+%----------------------------------------------------------
+\begin{frame}{Пример маркированного списка}
+    \begin{itemize}
+        \item Первый элемент списка
+        \item Второй элемент списка
+            \begin{itemize}
+                \item Вложенный элемент
+                \item Еще один вложенный элемент
+            \end{itemize}
+        \item Третий элемент списка
+    \end{itemize}
+\end{frame}
+
+%----------------------------------------------------------
+% Пример слайда с нумерованным списком
+%----------------------------------------------------------
+\begin{frame}{Пример нумерованного списка}
+    \begin{enumerate}
+        \item Первый шаг
+        \item Второй шаг
+        \item Третий шаг
+    \end{enumerate}
+\end{frame}
+
+%----------------------------------------------------------
+% Пример слайда с цитатой/ссылкой
+%----------------------------------------------------------
+\begin{frame}{Пример с цитированием}
+    Основной текст слайда с важной информацией.
+    
+    \vspace{1em}
+    
+    \tiny Источник: Фамилия И.О. и др. Название статьи // Журнал. – Год. – Т. X. – С. XX-XX.
+\end{frame}
+
+%----------------------------------------------------------
+% Пример слайда с большим изображением на весь экран
+%----------------------------------------------------------
+\begin{frame}[plain]
+    \frametitle{Изображение на весь экран}
+    \begin{tikzpicture}[remember picture, overlay]
+        \node[at=(current page.center)] {
+            \includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{images/Sirius-logo.png}
+        };
+    \end{tikzpicture}
+\end{frame}
+
+%----------------------------------------------------------
+% Пример слайда с двумя колонками
+%----------------------------------------------------------
+\begin{frame}{Две колонки}
+    \begin{columns}
+        \begin{column}{0.48\textwidth}
+            \textbf{Левая колонка:}
+            \begin{itemize}
+                \item Пункт 1
+                \item Пункт 2
+                \item Пункт 3
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\textwidth}
+            \textbf{Правая колонка:}
+            \begin{figure}
+                \centering
+                \includegraphics[width=\linewidth]{images/Sirius-logo.png}
+                \caption{Подпись к изображению}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+%----------------------------------------------------------
+% Слайд с благодарностью
+%----------------------------------------------------------
+\begin{frame}
+    \centering
+    \LARGE Спасибо за внимание!
+    
+    \vspace{1em}
+    
+    \large Вопросы?
+\end{frame}
+
+\end{document} 

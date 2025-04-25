@@ -1,0 +1,38 @@
+# LaTeX временные файлы
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+.*.lb
+*.dvi
+*.xdv
+*-converted-to.*
+*.ps
+*.eps
+# *.pdf  # Оставляем PDF файлы для хранения скомпилированных презентаций
+*.bbl
+*.bcf
+*.blg
+*-blx.aux
+*-blx.bib
+*.run.xml
+*.synctex
+*.synctex(busy)
+*.synctex.gz
+*.synctex.gz(busy)
+*.pdfsync
+*.nav
+*.snm
+*.vrb
+
+# Другие временные файлы
+.DS_Store
+Thumbs.db
+*~ 
